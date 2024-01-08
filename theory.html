@@ -1,0 +1,524 @@
+<!doctype html>
+<html data-bs-theme="dark" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href=".\bootstrap-5.3.2\css\bootstrap.min.css" rel="stylesheet">
+    <link href="css\styles.css" rel="stylesheet">
+  </head>
+  <body> 
+
+    <nav class="navbar bg-body-tertiary navbar-dark bg-dark">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.svg" alt="Logo" width="55" height="55">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="theory.html">Теория</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tests.html">Тесты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <main class="container">
+      
+      <div class="row mx-auto" >
+
+        <div class="col-3 border-end d-none d-lg-block" >
+          <!-- Scrollspy -->
+          <nav id="navbar-theory" class="sticky-top py-5 px-3 mx-2">
+            <nav class="nav nav-pills flex-column">
+              <div class="my-3 ">
+                <img src="img/book-half.svg" width="40" height="32">
+                <span class="fs-4">Теория</span>
+              </div>
+
+              <a class="nav-link" href="#theory0">Что такое CSS Grid?</a>
+              <a class="nav-link" href="#theory1">Использование Grid в CSS</a>
+              <a class="nav-link" href="#theory2">Размещение элементов по Grid-линиям</a>
+              <a class="nav-link" href="#theory3">Позиционирование с помощью grid-template-areas</a>
+              <a class="nav-link" href="#theory4">Вложение сеток и подсеток</a>
+              <a class="nav-link" href="#theory5">Grid-фреймворки</a>
+
+            </nav>
+          </nav>
+        </div>
+        <div class="col-lg-9 col-12 px-lg-5 px-3 py-5">
+          <div  data-bs-spy="scroll" data-bs-target="#navbar-theory"   class="scrollspy-theory" tabindex="0">
+            <div id="theory0"  >
+              <h2 class="my-4">Что такое CSS Grid?</h2>
+              <p>Сетка представляет собой комбинацию горизонтальных и вертикальных линий, образующих основу, по которой мы можем выравнивать компоненты дизайна. Ее назначение - облегчить создание макетов, в которых элементы сохраняют последовательное выравнивание и переход по ширине на разных страницах, что повышает единообразие наших сайтов. Как правило, сетка включает в себя столбцы, строки и промежутки между строками и столбцами, которые обычно называют Gutters (или просто отступы).</p>
+              <img class="img-fluid py-4" src="img/grid-term.jpg">
+            </div>
+
+            <div id="theory1" >
+
+              <h2 class="my-4">Использование Grid в CSS</h2>
+              <p>После того как вы выбрали сетку, подходящую для вашего дизайна, вы можете использовать CSS Grid Layout для ее создания. Вначале мы рассмотрим фундаментальные аспекты Grid Layout, а затем углубимся в процесс создания простой системы сетки для вашего проекта.</p>
+              <h3>Определение сетки</h3>
+              <p>Давайте поэкспериментируем с макетами сетки на примере. Откройте следующий пример в текстовом редакторе:</p>
+              <p><code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="en-us"&gt;<br>
+                  &lt;head&gt;<br>
+                    &lt;meta charset="utf-8"&gt;<br>
+                    &lt;meta name="viewport" content="width=device-width"&gt;<br>
+                    &lt;title&gt;CSS Grid starting point&lt;/title&gt;<br>
+                    &lt;style&gt;<br>
+                        body {<br>
+                            width: 90%;<br>
+                            max-width: 900px;<br>
+                            margin: 2em auto;<br>
+                            font: .9em/1.2 Arial, Helvetica, sans-serif;<br>
+                        }<br>
+                        <br>
+                        .container &gt; div {<br>
+                            border-radius: 5px;<br>
+                            padding: 10px;<br>
+                            background-color: #009695;<br>
+                            border: 2px solid #9bf9f9;<br>
+                        }<br>
+                    &lt;/style&gt;<br>
+                  &lt;/head&gt;<br>
+                  <br>
+                  &lt;body&gt;<br>
+                    &lt;h1&gt;Simple grid example&lt;/h1&gt;<br>
+                    <br>
+                    &lt;div class="container"&gt;<br>
+                        &lt;div&gt;Один&lt;/div&gt;<br>
+                        &lt;div&gt;Два&lt;/div&gt;<br>
+                        &lt;div&gt;Три&lt;/div&gt;<br>
+                        &lt;div&gt;Четыре&lt;/div&gt;<br>
+                        &lt;div&gt;Пять&lt;/div&gt;<br>
+                        &lt;div&gt;Шесть&lt;/div&gt;<br>
+                        &lt;div&gt;Семь&lt;/div&gt;<br>
+                    &lt;/div&gt;<br>
+                  &lt;/body&gt;<br>
+                  <br>
+                &lt;/html&gt;<br>
+              </code></p>
+              <p>Как вы видите в этом коде есть контейнер, содержащий несколько дочерних элементов. По умолчанию эти элементы представлены в стандартном потоке, что приводит к вертикальному расположению. В первой части этого руководства мы будем использовать этот файл для наблюдения за поведением сетки.</p>
+              <p>Подобно тому, как вы задаете flexbox, присваивая свойству display значение grid. Как и в случае с flexbox, использование свойства display: grid превращает все ближайшие дочерние элементы контейнера в элементы сетки. Включите предоставленный CSS в свой файл:</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                }
+              </code></p>
+              <p>В отличие от Flexbox, визуальное изменение элементов происходит не сразу. Указание display: grid приводит к созданию одноколоночной сетки, сохраняя отображение элементов в вертикальном расположении, подобно обычному потоку.</p>
+              <p>Чтобы добиться более похожего на сетку вида, необходимо ввести в сетку столбцы. Давайте создадим три колонки, каждая из которых будет иметь размер 200 пикселей. Вы можете использовать любую единицу длины или процент для построения этих столбцов.</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: 200px 200px 200px;<br>
+                }
+              </code></p>
+              <p>Внесите правило CSS и обновите страницу. Вы должны заметить, что элементы перегруппированы, и каждый из них занимает свою ячейку в сетке.</p>
+              <img class="img-fluid my-4" src="img/grid_result.png" alt="">
+
+              <h3 class="my-4">Гибкие сетки с единицами измерения fr</h3>
+              <p>Помимо построения сетки с помощью длин и процентов, у нас есть возможность использовать единицы измерения "fr". Единица "fr" символизирует долю доступного пространства в контейнере сетки, что позволяет гибко изменять размеры как строк, так и столбцов сетки.</p>
+              <p>Измените спецификацию дорожек в соответствии с последующим определением, создав три дорожки размером 1 fr каждая:</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: 1fr 1fr 1fr;<br>
+                }
+              </code></p>
+              <p>Теперь у вас есть адаптируемые дорожки. Блок "fr" распределяет пространство пропорционально. Вы можете задать различные положительные значения для дорожек следующим образом:</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: 2fr 1fr 1fr;<br>
+                }
+              </code></p>
+              <p>Первая дорожка получает 2fr из имеющегося пространства, а последующие две дорожки получают по 1fr, в результате чего первая дорожка увеличивается. Можно комбинировать блоки "fr" с блоками фиксированной длины. В этом случае сначала выделяется пространство, необходимое для фиксированных дорожек, а затем избыточное пространство распределяется между другими дорожками.</p>
+              <img class="img-fluid my-4" src="img/grid_result1.png" alt="">
+
+              <h3 class="my-4">Промежутки между дорожками</h3>
+              <p>Чтобы определить промежутки между дорожками, мы используем следующие свойства:</p>
+              <p><ul>
+                <li>column-gap - для промежутков между столбцами</li>
+                <li>row-gap - для промежутков между строчками</li>
+                <li>gap - для промежутков между между столбцами и строчками</li>
+              </ul></p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: 2fr 1fr 1fr;<br>
+                  &nbsp;&nbsp;gap: 20px;<br>
+                }
+              </code></p>
+              <p>Эти промежутки могут принимать любую единицу длины или процентное соотношение; однако они не могут быть указаны в единицах "fr".</p>
+              <img class="img-fluid my-4" src="img/grid_result2.png" alt="">
+
+              <h3 class="my-4">Повторяющиеся размеры дорожек</h3>
+              <p>У вас есть возможность воспроизвести весь список размеров дорожек или только его часть с помощью функции CSS repeat(). Измените определение размеров столбцов, приведя ее к следующему виду:</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br>
+                  &nbsp;&nbsp;gap: 20px;<br>
+                }
+              </code></p>
+              <p>Теперь вы получите три дорожки по 1 кадру, аналогично предыдущей конфигурации. Начальный параметр функции repeat() указывает, сколько раз вы хотите повторить листинг, а второй параметр содержит количество дорожек, которые вы хотите повторить.</p>
+              
+              <h3 class="my-4">Явные и неявные сетки</h3>
+              <p>До сих пор мы определяли только дорожки столбцов, а строки генерировались автоматически для размещения содержимого. Это подчеркивает разницу между явными и неявными сетками. Давайте немного углубимся в различие между этими двумя типами сеток:</p>
+              <p><ul>
+                <li>Явная сетка создаётся с помощью grid-template-columns или grid-template-rows</li>
+                <li>Неявная сетка расширяется за пределы явно заданной сетки, когда содержимое размещается за ее пределами, например, расширяется в строках, вводя дополнительные линии сетки.</li>
+              </ul></p>
+              <p>По умолчанию дорожки, сгенерированные в неявной сетке, имеют автоматический размер, обычно обеспечивающий достаточную площадь для размещения их содержимого. Если вы хотите присвоить дорожкам неявной сетки определенный размер, вы можете использовать свойства grid-auto-rows и grid-auto-columns. Например, включение в CSS свойства grid-auto-rows со значением 100px приведет к тому, что вновь созданные строки будут иметь высоту 100 пикселей.</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br>
+                  &nbsp;&nbsp;grid-auto-rows: 100px;<br>
+                  &nbsp;&nbsp;gap: 20px;<br>
+                }
+              </code></p>
+              <img class="img-fluid my-4" src="img/grid_result3.png" alt="">
+
+              <h3 class="my-4">Функция minmax()</h3>
+              <p>Дорожки высотой 100 пикселей каждая могут оказаться непрактичными при вставке содержимого, превышающего 100 пикселей, что может привести к проблемам переполнения. Возможно, будет выгоднее иметь дорожки с минимальной высотой 100 пикселей, которые могут расширяться по мере добавления контента. Основополагающим аспектом Интернета является неопределенность в отношении точной высоты элементов - дополнительный контент или увеличенный размер шрифта могут создать проблемы для дизайнеров, стремящихся к пиксельному совершенству в каждом измерении.</p>
+              <p>Функция minmax() позволяет задать минимальный и максимальный размер дорожки, как, например, в случае minmax(100px, auto). Здесь минимальный размер установлен на 100 пикселей, а максимальный - на auto, что позволяет расширять дорожку для размещения дополнительного контента. Поэкспериментируйте с изменением сетки-авто-строки, чтобы использовать значение minmax:</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br>
+                  &nbsp;&nbsp;grid-auto-rows: minmax(100px, auto);<br>
+                  &nbsp;&nbsp;gap: 20px;<br>
+                }
+              </code></p>
+              <p>Когда вы добавляете дополнительный контент, вы увидите, что дорожка расширяется, чтобы вместить его. Важно отметить, что это расширение происходит непосредственно вдоль строки.</p>
+
+              <h3 class="my-4">Столбцов столько, сколько поместится</h3>
+              <p>Мы можем объединить несколько понятий о списках треков, нотации повторов и minmax(), чтобы разработать практический шаблон. Иногда полезно дать гриду указание генерировать столько столбцов, сколько может поместиться в контейнере. Это достигается путем настройки значения grid-template-columns с помощью функции repeat(). Вместо того чтобы указывать числовое значение, используйте ключевое слово auto-fit в качестве первого параметра функции. Для второго параметра используйте minmax() с минимальным значением, эквивалентным желаемому минимальному размеру дорожки, и максимальным значением 1fr.</p>
+              <p>Реализуйте это в своем файле, используя предоставленный CSS:</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));<br>
+                  &nbsp;&nbsp;grid-auto-rows: minmax(100px, auto);<br>
+                  &nbsp;&nbsp;gap: 20px;<br>
+                }
+              </code></p>
+              <img class="img-fluid my-4" src="img/grid_result4.png" alt="">
+              <p>Это работает эффективно, потому что сетка генерирует столько 200-пиксельных столбцов, сколько может быть размещено в контейнере. Затем оставшееся пространство распределяется между всеми столбцами. Максимальное значение - 1fr, что, как мы знаем, равномерно распределяет пространство между дорожками.</p>
+            </div>
+          
+            <div  id="theory2">
+              <h2  class="my-4">Размещение элементов по Grid-линиям</h2>
+              <p>Пройдя этап создания сетки, мы теперь сосредоточимся на размещении элементов на ней. Сетка состоит из строк, пронумерованных от 1, и их ориентация соответствует режиму написания документа. Например, в английском языке (пишется слева направо) столбец строки 1 находится слева, а строка строки 1 - сверху. В арабском языке (пишется справа налево) строка столбца 1 находится справа.</p>
+              <p>Чтобы расположить элементы на этих строках, мы можем указать начальную и конечную строки области сетки, в которой должен находиться элемент. Этому способствуют четыре свойства:</p>
+              <p><ul>
+                <li>grid-column-start</li>
+                <li>grid-column-end</li>
+                <li>grid-row-start</li>
+                <li>grid-row-end</li>
+              </ul></p>
+              <p>Эти свойства принимают номера строк в качестве значений, что позволяет нам объявить, что элемент должен начинаться со строки 1 и заканчиваться, например, на строке 3. В качестве альтернативы можно использовать сокращенные свойства, позволяющие одновременно указывать начальную и конечную строки, разделенные прямой косой чертой (/):</p>
+              <p><ul>
+                <li>grid-column</li>
+                <li>grid-row</li>
+              </ul></p>
+              <p>Чтобы увидеть это в действии введите следующий код:</p>
+              <p><code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="en-us"&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8" /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width" /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;CSS Grid - line-based placement starting point&lt;/title&gt;<br>
+                    &nbsp;&nbsp;&lt;/head&gt;<br>
+                  <br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;Duis felis orci&lt;/header&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Duis ornare egestas&lt;/h1&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ornare ex malesuada et. In vitae convallis lacus. Aliquam erat<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eros pharetra congue. Duis ornare egestas augue ut luctus. Proin<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blandit quam nec lacus varius commodo et a urna. Ut id ornare felis,<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eget fermentum sapien.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut,<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;facilisis sed est. Nam id risus quis ante semper consectetur eget<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aliquam lorem. Vivamus tristique elit dolor, sed pretium metus<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eget purus in interdum. Cum sociis natoque penatibus et magnis dis<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parturient montes, nascetur ridiculus mus.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Phasellus turpis est&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut,<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;facilisis sed est.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/aside&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;Mauris ultricies lectus sed lobortis finibus.&lt;/footer&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                  &nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+              </code></p>
+              <img class="img-fluid my-4" src="img/grid_result5.png" alt="">
+              <p>Файл включает в себя определенную сетку и простую статью с контурами, демонстрирующую автоматическое размещение, которое помещает каждый элемент в определенную ячейку сетки.</p>
+              <p>Теперь давайте расположим все элементы нашего сайта, используя линии сетки. Добавьте следующие правила в конец вашего CSS:</p>
+              <p><code>
+                header {<br>
+                  &nbsp;&nbsp;grid-column: 1 / 3;<br>
+                  &nbsp;&nbsp;grid-row: 1;<br>
+                }<br>
+                <br>
+                article {<br>
+                  &nbsp;&nbsp;grid-column: 2;<br>
+                  &nbsp;&nbsp;grid-row: 2;<br>
+                }<br>
+                <br>
+                aside {<br>
+                  &nbsp;&nbsp;grid-column: 1;<br>
+                  &nbsp;&nbsp;grid-row: 2;<br>
+                }<br>
+                <br>
+                footer {<br>
+                  &nbsp;&nbsp;grid-column: 1 / 3;<br>
+                  &nbsp;&nbsp;grid-row: 3;<br>
+                }
+              </code></p>
+              <img class="img-fluid my-4" src="img/grid_result6.png" alt="">
+            </div>
+
+            <div id="theory3">
+              <h2  class="my-4" >Позиционирование с помощью grid-template-areas</h2>
+              <p>Альтернативный метод организации элементов в сетке предполагает использование свойства grid-template-areas и присвоение различных имен элементам дизайна.</p>
+              <p>Отмените позиционирование на основе линий из предыдущего примера и вставьте следующий CSS.</p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-areas:<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;"header header"<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;"sidebar content"<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;"footer footer";<br>
+                  &nbsp;&nbsp;grid-template-columns: 1fr 3fr;<br>
+                  &nbsp;&nbsp;gap: 20px;<br>
+                }<br>
+                <br>
+                header {<br>
+                  &nbsp;&nbsp;grid-area: header;<br>
+                }<br>
+                <br>
+                article {<br>
+                  &nbsp;&nbsp;grid-area: content;<br>
+                }<br>
+                <br>
+                aside {<br>
+                  &nbsp;&nbsp;grid-area: sidebar;<br>
+                }<br>
+                <br>
+                footer {<br>
+                  &nbsp;&nbsp;grid-area: footer;<br>
+                }
+              </code></p>
+              <p>Перезагрузив страницу, вы заметите, что ваши элементы расположились точно так же, как и раньше, без необходимости использовать номера строк.</p>
+              <img class="img-fluid my-4" src="img/grid_result7.png" alt="">
+              <p>Рекомендации по использованию grid-template-areas следующие:</p>
+              <p><ul>
+                <li>Убедитесь, что каждая ячейка сетки занята.</li>
+                <li>Чтобы разделить две ячейки, продублируйте присвоенное имя.</li>
+                <li>Для пустой ячейки используйте символ "." (точка).</li>
+                <li>Области должны быть прямоугольной формы; например, L-образная область недопустима.</li>
+                <li>Области не могут быть продублированы в разных местах.</li>
+              </ul></p>
+              <p>Можете экспериментировать с макетом, например, располагать нижний колонтитул исключительно под статьей или растягивать боковую панель по всей высоте. Такой подход служит четким и лаконичным методом описания макета, так как с помощью CSS становится ясно, что происходит.</p>
+            </div>
+
+            <div id="theory4">
+              <h2  class="my-4" >Вложение сеток и подсеток</h2>
+              <p>Можно включить сетку в другую сетку, сформировав "подсетку". Этого можно добиться, применив к элементу сетки свойство display: grid.</p>
+              <p>Давайте подробнее рассмотрим предыдущую иллюстрацию, представив контейнер для статей и реализовав вложенную сетку для управления расположением нескольких статей. Хотя мы используем только один столбец во вложенной сетке, мы можем задать распределение строк в соотношении 2:1:1 с помощью свойства grid-template-rows. Такой подход позволяет создать макет, в котором одна статья в верхней части страницы имеет больший размер, а остальные - меньший, похожий на превью.</p>
+              <p><code>
+                .articles {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-rows: 2fr 1fr 1fr;<br>
+                  &nbsp;&nbsp;gap: inherit;<br>
+                }<br>
+                <br>
+                article {<br>
+                  &nbsp;&nbsp;padding: 10px;<br>
+                  &nbsp;&nbsp;border: 2px solid rgb(79 185 227);<br>
+                  &nbsp;&nbsp;border-radius: 5px;<br>
+                }
+              </code></p>
+              <img class="img-fluid my-4" src="img/grid_result8.png" alt="">
+              <p>Чтобы упростить работу с макетами во вложенных сетках, вы можете использовать свойство subgrid для свойств grid-template-rows и grid-template-columns. Это позволит использовать дорожки, определенные в родительской сетке.</p>
+              <p>В следующем примере мы используем размещение на основе линий, позволяя вложенной сетке распространяться на несколько столбцов и строк родительской сетки. Мы включили subgrid, чтобы унаследовать дорожки столбцов от родительской сетки и в то же время создать отдельный макет для строк внутри вложенной сетки.</p>
+              <p><code>
+                &lt;div class="container"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Один&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Два&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Три&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Четыре&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div id="subgrid"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Пять&lt;/div&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Шесть&lt;/div&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Семь&lt;/div&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Восемь&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Девять&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Десять&lt;/div&gt;<br>
+              &lt;/div&gt;
+              </code></p>
+              <p><code>
+                .container {<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;grid-template-columns: repeat(4, 1fr);<br>
+                  &nbsp;&nbsp;grid-template-rows: repeat(1, 1fr);<br>
+                  &nbsp;&nbsp;gap: 10px;<br>
+                }<br>
+                <br>
+                #subgrid {<br>
+                  &nbsp;&nbsp;grid-column: 1 / 4;<br>
+                  &nbsp;&nbsp;grid-row: 2 / 4;<br>
+                  &nbsp;&nbsp;display: grid;<br>
+                  &nbsp;&nbsp;gap: inherit;<br>
+                  &nbsp;&nbsp;grid-template-columns: subgrid;<br>
+                  &nbsp;&nbsp;grid-template-rows: 2fr 1fr;<br>
+                }
+              </code></p>
+              <img class="img-fluid my-4" src="img/grid_result9.png" alt="">
+            </div>
+
+            <div id="theory5">
+              <h2  class="my-4" >Grid-фреймворки</h2>
+              <p>Существует несколько фреймворков сетки, которые обеспечивают 12- или 16-колоночную сетку, помогая организовать ваш контент. К счастью, существует большая вероятность того, что вам не понадобятся сторонние фреймворки для создания макетов на основе сетки. Функциональность сетки встроена в спецификацию и широко поддерживается большинством современных браузеров.</p>
+              <p>Откройте следующий исходный, который содержит контейнер с предопределенной 12-колоночной сеткой и использует ту же разметку, что и в предыдущих двух примерах. Затем мы можем использовать размещение на основе строк для размещения нашего содержимого в сетке из 12 столбцов.</p>
+              <p><code>    &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="en-us"&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;CSS Grid - line-based placement starting point&lt;/title&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 90%;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max-width: 900px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 2em auto;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font: .9em/1.2 Arial, Helvetica, sans-serif;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.container {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(12, minmax(0, 1fr));<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;header, footer {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 5px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #009695;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid #9bf9f9;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aside {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right: 1px solid #999;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br>
+                  &nbsp;&nbsp;&lt;/head&gt;<br>
+                  <br>
+                  &lt;body&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="container"&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;This is my lovely blog&lt;/header&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My article&lt;/h1&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam lorem. Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt;&lt;h2&gt;Other things&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est.&lt;/p&gt;&lt;/aside&gt;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;Contact me@mysite.com&lt;/footer&gt;<br>
+                    &nbsp;&nbsp;&lt;/div&gt;<br>
+                  &lt;/body&gt;<br>
+                &lt;/html&gt;</code></p>
+
+                <p><code>
+                  header {<br>
+                    &nbsp;&nbsp;grid-column: 1 / 13;<br>
+                    &nbsp;&nbsp;grid-row: 1;<br>
+                  }<br>
+                  <br>
+                  article {<br>
+                    &nbsp;&nbsp;grid-column: 4 / 13;<br>
+                    &nbsp;&nbsp;grid-row: 2;<br>
+                  }<br>
+                  <br>
+                  aside {<br>
+                    &nbsp;&nbsp;grid-column: 1 / 4;<br>
+                    &nbsp;&nbsp;grid-row: 2;<br>
+                  }<br>
+                  <br>
+                  footer {<br>
+                    &nbsp;&nbsp;grid-column: 1 / 13;<br>
+                    &nbsp;&nbsp;grid-row: 3;<br>
+                  }
+                </code></p>
+                <img class="img-fluid my-4" src="img/grid_result10.png" alt="">
+                <p>Используя инспектор сетки Firefox для наложения линий сетки на ваш дизайн, вы сможете наглядно увидеть работу нашей 12-колоночной сетки.</p>
+                <img class="img-fluid my-4" src="img/grid_result11.png" alt="">
+            </div>
+        </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">© 2023 NikitaShutikov, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Главная</a></li>
+          <li class="nav-item"><a href="theory.html" class="nav-link px-2 text-body-secondary">Теория</a></li>
+          <li class="nav-item"><a href="tests.html" class="nav-link px-2 text-body-secondary">Тесты</a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src=".\bootstrap-5.3.2\js\bootstrap.bundle.min.js"></script>
+    <script src="js/init_es.js"></script>
+  </body>
+</html>

@@ -1,0 +1,718 @@
+<!doctype html>
+<html data-bs-theme="dark" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href=".\bootstrap-5.3.2\css\bootstrap.min.css" rel="stylesheet">
+    <link href="css\styles.css" rel="stylesheet">
+  </head>
+  <body> 
+
+    <nav class="navbar bg-body-tertiary navbar-dark bg-dark">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.svg" alt="Logo" width="55" height="55">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="theory.html">Теория</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="tests.html">Тесты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <main class="container ">
+      
+      <div class="row m-auto py-5" >
+
+        <div class="col-3 border-end d-lg-block d-none " >
+          <!-- Scrollspy -->
+          <nav id="navbar-theory" class="sticky-top">
+            <nav class="nav nav-pills flex-column">
+              <div class="my-3 ">
+                <img src="img/journal-text.svg" width="40" height="32">
+                <span class="fs-4">Тесты</span>
+              </div>
+
+              <a class="nav-link" href="#test0">Что такое CSS Grid?</a>
+              <a class="nav-link" href="#test1">Использование Grid в CSS</a>
+              <a class="nav-link" href="#test2">Размещение элементов по Grid-линиям</a>
+              <a class="nav-link" href="#test3">Позиционирование с помощью grid-template-areas</a>
+              <a class="nav-link" href="#test4">Вложение сеток и подсеток</a>
+              <a class="nav-link" href="#test5">Grid-фреймворки</a>
+
+            </nav>
+          </nav>
+        </div>
+        <div class="col-lg-9 col-12">
+          <div data-bs-spy="scroll" data-bs-target="#navbar-theory" class="scrollspy-theory" >
+              <form id="test0">
+                <p class="h2 text-center py-4">Тест "Что такое CSS Grid?"</p>
+                <ol class="container list-group list-group-numbered text-center">
+
+                  <li id="test0_1"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Что представляет собой сетка в дизайне?</h5>
+
+                    <input type="radio" class="btn-check" name="options1" value="1" autocomplete="off" id="o_1_1_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_1_1">
+                      Только горизонтальные линии
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="2" autocomplete="off" id="o_1_1_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_1_2">
+                      Комбинация горизонтальных и вертикальных линий
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="3" autocomplete="off" id="o_1_1_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_1_3">
+                      Только вертикальные линии
+                    </label>
+                  </li>
+
+                  <li id="test0_2"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какое назначение у сетки в дизайне?</h5>
+
+                    <input type="radio" class="btn-check" name="options2" value="1" autocomplete="off" id="o_1_2_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_2_1">
+                      Усложнение создания макетов
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="2" autocomplete="off" id="o_1_2_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_2_2">
+                      Снижение единообразия на сайтах
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="3" autocomplete="off" id="o_1_2_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_2_3">
+                      Облегчение создания макетов с последовательным выравниванием
+                    </label>
+                  </li>
+
+                  <li id="test0_3"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие элементы включает сетка?</h5>
+
+                    <input type="radio" class="btn-check" name="options3" value="1" autocomplete="off" id="o_1_3_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_3_1">
+                      Только столбцы
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="2" autocomplete="off" id="o_1_3_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_3_2">
+                      Только строки
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="3" autocomplete="off" id="o_1_3_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_3_3">
+                      Столбцы, строки и промежутки между ними
+                    </label>
+                  </li>
+
+                  <li id="test0_4"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Что такое Gutters в контексте сетки?</h5>
+
+                    <input type="radio" class="btn-check" name="options4" value="1" autocomplete="off" id="o_1_4_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_4_1">
+                      Горизонтальные линии
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="2" autocomplete="off" id="o_1_4_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_4_2">
+                      Вертикальные линии
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="3" autocomplete="off" id="o_1_4_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_4_3">
+                      Промежутки между строками и столбцами
+                    </label>
+                  </li>
+
+                  <li id="test0_5"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Как сетка повышает единообразие сайтов?</h5>
+
+                    <input type="radio" class="btn-check" name="options5" value="1" autocomplete="off" id="o_1_5_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_5_1">
+                      Увеличивает сложность дизайна
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="2" autocomplete="off" id="o_1_5_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_5_2">
+                      Содействует последовательному выравниванию элементов
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="3" autocomplete="off" id="o_1_5_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_1_5_3">
+                      Уменьшает количество отступов
+                    </label>
+                  </li>
+
+                  <button type="button" class="btn btn-light my-2 py-2 w-100" onclick="checkAnswers('0')">Проверить</button>
+                  <div class="alert my-2" role="alert" id="resultAlert_0" style="display: none;"></div>
+                </ol>
+              </form>
+
+              <form id="test1" class="py-5">
+                <p class="h2 text-center py-4">Тест "Использование Grid в CSS"</p>
+                <ol class="container list-group list-group-numbered text-center">
+
+                  <li id="test1_1"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какое свойство CSS используется для создания сетки с помощью Grid Layout?</h5>
+
+                    <input type="radio" class="btn-check" name="options1" value="1" autocomplete="off" id="o_2_1_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_1_1">
+                      grid-template-columns
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="2" autocomplete="off" id="o_2_1_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_1_2">
+                      display: flex
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="3" autocomplete="off" id="o_2_1_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_1_3">
+                      column-gap
+                    </label>
+                  </li>
+
+                  <li id="test1_2"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие единицы измерения можно использовать для задания размеров дорожек сетки, помимо длин и процентов?</h5>
+
+                    <input type="radio" class="btn-check" name="options2" value="1" autocomplete="off" id="o_2_2_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_2_1">
+                      em
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="2" autocomplete="off" id="o_2_2_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_2_2">
+                      fr
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="3" autocomplete="off" id="o_2_2_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_2_3">
+                      px
+                    </label>
+                  </li>
+
+                  <li id="test1_3"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие свойства CSS используются для определения промежутков между столбцами и строками в сетке?</h5>
+
+                    <input type="radio" class="btn-check" name="options3" value="1" autocomplete="off" id="o_2_3_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_3_1">
+                      grid-gap
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="2" autocomplete="off" id="o_2_3_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_3_2">
+                      column-width
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="3" autocomplete="off" id="o_2_3_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_3_3">
+                      row-gap
+                    </label>
+                  </li>
+
+                  <li id="test1_4"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Как создать три дорожки с использованием функции CSS repeat()?</h5>
+
+                    <input type="radio" class="btn-check" name="options4" value="1" autocomplete="off" id="o_2_4_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_4_1">
+                      grid-template-columns: repeat(3, 1fr);
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="2" autocomplete="off" id="o_2_4_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_4_2">
+                      grid-auto-rows: repeat(3, 1fr);
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="3" autocomplete="off" id="o_2_4_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_4_3">
+                      gap: repeat(3, 1fr);
+                    </label>
+                  </li>
+
+                  <li id="test1_5"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие свойства CSS позволяют управлять размерами дорожек с использованием функции minmax()?</h5>
+
+                    <input type="radio" class="btn-check" name="options5" value="1" autocomplete="off" id="o_2_5_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_5_1">
+                      grid-template-rows
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="2" autocomplete="off" id="o_2_5_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_5_2">
+                      grid-auto-columns
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="3" autocomplete="off" id="o_2_5_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_2_5_3">
+                      grid-auto-rows и grid-auto-columns
+                    </label>
+                  </li>
+
+                  <button type="button" class="btn btn-light my-2 py-2 w-100" onclick="checkAnswers('1')">Проверить</button>
+                  <div class="alert my-2" role="alert" id="resultAlert_1" style="display: none;"></div>
+                </ol>
+              </form>
+
+              <form id="test2" class="py-5">
+                <p class="h2 text-center py-4">Тест "Размещение элементов по Grid-линиям"</p>
+                <ol class="container list-group list-group-numbered text-center">
+
+                  <li id="test2_1"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие свойства CSS используются для указания начальной и конечной строки области сетки?</h5>
+
+                    <input type="radio" class="btn-check" name="options1" value="1" autocomplete="off" id="o_3_1_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_1_1">
+                      grid-start-column и grid-end-column
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="2" autocomplete="off" id="o_3_1_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_1_2">
+                      grid-row-start и grid-row-end
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="3" autocomplete="off" id="o_3_1_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_1_3">
+                      column-start-grid и column-end-grid
+                    </label>
+                  </li>
+
+                  <li id="test2_2"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие альтернативные сокращенные свойства можно использовать для одновременного указания начальной и конечной строки области сетки?</h5>
+
+                    <input type="radio" class="btn-check" name="options2" value="1" autocomplete="off" id="o_3_2_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_2_1">
+                      row-column и column-row
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="2" autocomplete="off" id="o_3_2_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_2_2">
+                      grid-row и grid-column
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="3" autocomplete="off" id="o_3_2_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_2_3">
+                      start-row и end-row
+                    </label>
+                  </li>
+
+                  <li id="test2_3"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие значения принимают свойства grid-column-start и grid-column-end?</h5>
+
+                    <input type="radio" class="btn-check" name="options3" value="1" autocomplete="off" id="o_3_3_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_3_1">
+                      Только целочисленные значения
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="2" autocomplete="off" id="o_3_3_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_3_2">
+                      Только буквенные значения
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="3" autocomplete="off" id="o_3_3_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_3_3">
+                      Номера строк
+                    </label>
+                  </li>
+
+                  <li id="test2_4"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какое CSS-свойство используется для размещения элементов по grid-линиям?</h5>
+
+                    <input type="radio" class="btn-check" name="options4" value="1" autocomplete="off" id="o_3_4_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_4_1">
+                      align-items
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="2" autocomplete="off" id="o_3_4_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_4_2">
+                      grid-template-areas
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="3" autocomplete="off" id="o_3_4_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_4_3">
+                      justify-content
+                    </label>
+                  </li>
+
+                  <li id="test2_5"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие значения можно использовать для определения размера колонок в CSS Grid?</h5>
+
+                    <input type="radio" class="btn-check" name="options5" value="1" autocomplete="off" id="o_3_5_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_5_1">
+                      fixed
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="2" autocomplete="off" id="o_3_5_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_5_2">
+                      repeat
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="3" autocomplete="off" id="o_3_5_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_3_5_3">
+                      span
+                    </label>
+                  </li>
+
+                  <button type="button" class="btn btn-light my-2 py-2 w-100" onclick="checkAnswers('2')">Проверить</button>
+                  <div class="alert my-2" role="alert" id="resultAlert_2" style="display: none;"></div>
+                </ol>
+              </form>
+
+              <form id="test3" class="py-5">
+                <p class="h2 text-center py-4">Тест "Позиционирование с помощью grid-template-areas"</p>
+                <ol class="container list-group list-group-numbered text-center">
+
+                  <li id="test3_1"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Каким образом осуществляется организация элементов в сетке с использованием grid-template-areas?</h5>
+
+                    <input type="radio" class="btn-check" name="options1" value="1" autocomplete="off" id="o_4_1_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_1_1">
+                      Путем указания номеров строк и столбцов
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="2" autocomplete="off" id="o_4_1_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_1_2">
+                      Путем присвоения имен элементам дизайна с использованием grid-template-areas
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="3" autocomplete="off" id="o_4_1_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_1_3">
+                      Путем задания координат элементов в пикселях
+                    </label>
+                  </li>
+
+                  <li id="test3_2"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие рекомендации предоставляются по использованию grid-template-areas?</h5>
+
+                    <input type="radio" class="btn-check" name="options2" value="1" autocomplete="off" id="o_4_2_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_2_1">
+                      Допускается использование L-образных областей
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="2" autocomplete="off" id="o_4_2_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_2_2">
+                      Области могут быть продублированы в разных местах
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="3" autocomplete="off" id="o_4_2_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_2_3">
+                      Для пустой ячейки следует использовать символ "."
+                    </label>
+                  </li>
+
+                  <li id="test3_3"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Что произойдет, если ячейка сетки не имеет присвоенного имени при использовании grid-template-areas?</h5>
+
+                    <input type="radio" class="btn-check" name="options3" value="1" autocomplete="off" id="o_4_3_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_3_1">
+                      Она будет автоматически удалена из сетки
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="2" autocomplete="off" id="o_4_3_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_3_2">
+                      Элементы не будут корректно расположены
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="3" autocomplete="off" id="o_4_3_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_3_3">
+                      Она будет заполнена символом "."
+                    </label>
+                  </li>
+
+                  <li id="test3_4"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие элементы в тексте указываются как обязательные для заполнения при использовании grid-template-areas?</h5>
+
+                    <input type="radio" class="btn-check" name="options4" value="1" autocomplete="off" id="o_4_4_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_4_1">
+                      Любые ячейки, в которых нужно разместить содержимое
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="2" autocomplete="off" id="o_4_4_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_4_2">
+                      Только ячейки с заранее заданными именами
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="3" autocomplete="off" id="o_4_4_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_4_3">
+                      Только ячейки с символом "." в качестве имени
+                    </label>
+                  </li>
+
+                  <li id="test3_5"class="row list-group-item py-3">
+                    <h5 class="col-12 ">В чем заключается преимущество использования grid-template-areas для позиционирования элементов?</h5>
+
+                    <input type="radio" class="btn-check" name="options5" value="1" autocomplete="off" id="o_4_5_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_5_1">
+                      Экономия ресурсов браузера
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="2" autocomplete="off" id="o_4_5_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_5_2">
+                      Увеличение производительности сетки
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="3" autocomplete="off" id="o_4_5_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_4_5_3">
+                      Четкое и лаконичное описание макета с помощью именованных областей
+                    </label>
+                  </li>
+
+                  <button type="button" class="btn btn-light my-2 py-2 w-100" onclick="checkAnswers('3')">Проверить</button>
+                  <div class="alert my-2" role="alert" id="resultAlert_3" style="display: none;"></div>
+                </ol>
+              </form>
+
+              <form id="test4" class="py-5">
+                <p class="h2 text-center py-4">Тест "Вложение сеток и подсеток"</p>
+                <ol class="container list-group list-group-numbered text-center">
+
+                  <li id="test4_1"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какое свойство используется для включения сетки в другую сетку и формирования "подсетки"?</h5>
+
+                    <input type="radio" class="btn-check" name="options1" value="1" autocomplete="off" id="o_5_1_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_1_1">
+                      grid-template-columns
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="2" autocomplete="off" id="o_5_1_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_1_2">
+                      subgrid
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="3" autocomplete="off" id="o_5_1_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_1_3">
+                      gap
+                    </label>
+                  </li>
+
+                  <li id="test4_2"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какое свойство определяет распределение строк во вложенной сетке в соотношении 2:1:1?</h5>
+
+                    <input type="radio" class="btn-check" name="options2" value="1" autocomplete="off" id="o_5_2_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_2_1">
+                      grid-template-columns
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="2" autocomplete="off" id="o_5_2_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_2_2">
+                      gap
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="3" autocomplete="off" id="o_5_2_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_2_3">
+                      grid-template-rows
+                    </label>
+                  </li>
+
+                  <li id="test4_3"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какое свойство позволяет использовать дорожки, определенные в родительской сетке, для вложенной сетки?</h5>
+
+                    <input type="radio" class="btn-check" name="options3" value="1" autocomplete="off" id="o_5_3_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_3_1">
+                      gap
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="2" autocomplete="off" id="o_5_3_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_3_2">
+                      grid-template-columns
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="3" autocomplete="off" id="o_5_3_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_3_3">
+                      subgrid
+                    </label>
+                  </li>
+
+                  <li id="test4_4"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Как можно задать количество столбцов и строк в подсетке в CSS Grid?</h5>
+
+                    <input type="radio" class="btn-check" name="options4" value="1" autocomplete="off" id="o_5_4_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_4_1">
+                      grid-subgrid-columns и grid-subgrid-rows
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="2" autocomplete="off" id="o_5_4_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_4_2">
+                      grid-template-columns и grid-template-rows
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="3" autocomplete="off" id="o_5_4_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_4_3">
+                      grid-column и grid-row
+                    </label>
+                  </li>
+
+                  <li id="test4_5"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Как можно задать количество столбцов в подсетке внутри определенной строки в CSS Grid?</h5>
+
+                    <input type="radio" class="btn-check" name="options5" value="1" autocomplete="off" id="o_5_5_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_5_1">
+                      grid-subgrid-columns
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="2" autocomplete="off" id="o_5_5_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_5_2">
+                      grid-subgrid-rows
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="3" autocomplete="off" id="o_5_5_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_5_5_3">
+                      grid-template-columns
+                    </label>
+                  </li>
+
+                  <button type="button" class="btn btn-light my-2 py-2 w-100" onclick="checkAnswers('4')">Проверить</button>
+                  <div class="alert my-2" role="alert" id="resultAlert_4" style="display: none;"></div>
+                </ol>
+              </form>
+
+              <form id="test5">
+                <p class="h2 text-center py-4">Тест "Grid-фреймворки"</p>
+                <ol class="container list-group list-group-numbered text-center">
+
+                  <li id="test5_1"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какова роль grid-фреймворков в создании макетов на основе сетки?</h5>
+
+                    <input type="radio" class="btn-check" name="options1" value="1" autocomplete="off" id="o_6_1_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_1_1">
+                      Обязательное использование сторонних фреймворков
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="2" autocomplete="off" id="o_6_1_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_1_2">
+                      Встроенная функциональность в спецификацию с широкой поддержкой
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options1" value="3" autocomplete="off" id="o_6_1_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_1_3">
+                      Необходимость создания сетки вручную
+                    </label>
+                  </li>
+
+                  <li id="test5_2"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какой класс используется для создания ряда (row) в системе сеток CSS Grid во многих фреймворках?</h5>
+
+                    <input type="radio" class="btn-check" name="options2" value="1" autocomplete="off" id="o_6_2_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_2_1">
+                      .row
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="2" autocomplete="off" id="o_6_2_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_2_2">
+                      .grid-row
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options2" value="3" autocomplete="off" id="o_6_2_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_2_3">
+                      .container
+                    </label>
+                  </li>
+
+                  <li id="test5_3"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какие свойства CSS определяют параметры контейнера сетки?</h5>
+
+                    <input type="radio" class="btn-check" name="options3" value="1" autocomplete="off" id="o_6_3_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_3_1">
+                      grid-template-rows, gap
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="2" autocomplete="off" id="o_6_3_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_3_2">
+                      grid-template-columns, gap
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options3" value="3" autocomplete="off" id="o_6_3_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_3_3">
+                      border-radius, padding
+                    </label>
+                  </li>
+
+                  <li id="test5_4"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Каковы координаты сетки для размещения элемента в пределах контейнера сетки?</h5>
+
+                    <input type="radio" class="btn-check" name="options4" value="1" autocomplete="off" id="o_6_4_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_4_1">
+                      grid-column: 1 / 4
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="2" autocomplete="off" id="o_6_4_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_4_2">
+                      grid-column: 4 / 13
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options4" value="3" autocomplete="off" id="o_6_4_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_4_3">
+                      grid-row: 2
+                    </label>
+                  </li>
+
+                  <li id="test5_5"class="row list-group-item py-3">
+                    <h5 class="col-12 ">Какой из следующих CSS Grid фреймворков является наиболее популярным на данный момент?</h5>
+
+                    <input type="radio" class="btn-check" name="options5" value="1" autocomplete="off" id="o_6_5_1">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_5_1">
+                      Flexbox Grid
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="2" autocomplete="off" id="o_6_5_2">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_5_2">
+                      Bootstrap
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options5" value="3" autocomplete="off" id="o_6_5_3">
+                    <label class="btn btn-outline-secondary w-100 my-1" for="o_6_5_3">
+                      Gridify
+                    </label>
+                  </li>
+
+                  <button type="button" class="btn btn-light my-2 py-2 w-100" onclick="checkAnswers('5')">Проверить</button>
+                  <div class="alert my-2" role="alert" id="resultAlert_5" style="display: none;"></div>
+                </ol>
+              </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">© 2023 NikitaShutikov, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Главная</a></li>
+          <li class="nav-item"><a href="theory.html" class="nav-link px-2 text-body-secondary">Теория</a></li>
+          <li class="nav-item"><a href="tests.html" class="nav-link px-2 text-body-secondary">Тесты</a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src=".\bootstrap-5.3.2\js\bootstrap.bundle.min.js"></script>
+    <script src="js/init_es.js"></script>
+    <script src="js/test.js"></script>
+  </body>
+</html>
